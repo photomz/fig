@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { Link, graphql } from 'gatsby';
-import tw from 'twin.macro';
 
 import Layout from '../components/layout';
 import Seo from '../components/seo';
@@ -11,7 +10,7 @@ const BlogIndex = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <Seo title="All posts" />
+      <Seo title="FIG" />
       {posts.length === 0 ? (
         <p>
           No blog posts found. Add markdown posts to &quot;content/blog&quot;

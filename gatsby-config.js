@@ -3,12 +3,12 @@ module.exports = {
     title: `Food Inspires Growth`,
     author: {
       name: `Markus Zhang`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      summary: `who lives and studies in Singpore building useful things.`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
+    description: `Fig: The Food Inspires Growth Charity Project.`,
+    siteUrl: `https://foodinspiresgrowth.netlify.app`,
     social: {
-      twitter: `kylemathews`,
+      twitter: `photonmz`,
     },
   },
   plugins: [
@@ -114,13 +114,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `Food Inspires Growth`,
+        short_name: `FIG`,
         start_url: `/`,
-        background_color: `#ffffff`,
-        theme_color: `#663399`,
+        background_color: `#c7e6cd`,
+        theme_color: `#388d73`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/fig.png`, // This path is relative to the root of the site.
       },
     },
     `gatsby-plugin-react-helmet`,

@@ -42,4 +42,5 @@
   "rules": {
     "@typescript-eslint/no-unused-vars": "error",
     "react/no-danger": "off"
+  }
 }
