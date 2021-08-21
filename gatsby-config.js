@@ -129,4 +129,10 @@ module.exports = {
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
   ],
+  flags: {
+    FAST_DEV: true,
+    DEV_SSR: true,
+    PARALLEL_SOURCING: true,
+    LMDB_STORE: false,
+  },
 };
