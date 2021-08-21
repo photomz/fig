@@ -1,4 +1,5 @@
 import * as React from 'react';
+import tw from 'twin.macro';
 import { Link, graphql } from 'gatsby';
 
 import Layout from '../components/layout';
@@ -18,26 +19,21 @@ const BlogIndex = ({ data, location }) => {
           &quot;gatsby-source-filesystem&quot; plugin in gatsby-config.js).
         </p>
       ) : (
-        <ol style={{ listStyle: `none` }} tw="mt-5">
+        <ol tw="mt-5 list-none">
           {posts.map((post) => {
             const title = post.frontmatter.title || post.fields.slug;
 
             return (
               <li key={post.fields.slug}>
                 <article
-                  className="post-list-item"
+                  tw="mx-8"
                   itemScope
                   itemType="http://schema.org/Article"
                 >
-                  <header>
-                    <h2 tw="mt-8">
+                  <header tw="mb-4">
+                    <h2 tw="mt-8 text-2xl text-green-500 font-black mb-2">
                       <Link to={post.fields.slug} itemProp="url">
-                        <span
-                          itemProp="headline"
-                          tw="text-green-500 font-black"
-                        >
-                          {title}
-                        </span>
+                        <span itemProp="headline">{title}</span>
                       </Link>
                     </h2>
                     <small>{post.frontmatter.date}</small>
@@ -48,6 +44,7 @@ const BlogIndex = ({ data, location }) => {
                         __html: post.frontmatter.description || post.excerpt,
                       }}
                       itemProp="description"
+                      tw="mb-0"
                     />
                   </section>
                 </article>

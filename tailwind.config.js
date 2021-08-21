@@ -8,7 +8,8 @@ module.exports = {
   theme: {
     fontFamily: {
       sans: [
-        'Inter',
+        'Montserrat',
+        'system-ui',
         '-apple-system',
         'BlinkMacSystemFont',
         'Segoe UI',
@@ -16,7 +17,12 @@ module.exports = {
         'Helvetica',
         'Arial',
         'sans-serif',
+        'Apple Color Emoji',
+        'Segoe UI Emoji',
+        'Segoe UI Symbol',
+        'Noto Color Emoji',
       ],
+      serif: ['Merriweather', 'Georgia', 'Cambria', 'Times New Roman'],
       mono: ['Menlo', 'Monaco', 'Courier New', 'monospace'],
     },
     extend: {
@@ -81,9 +87,6 @@ module.exports = {
       },
       borderColor: {
         'color-800': 'var(--color-primary-800)',
-      },
-      outline: {
-        'no-chrome': 'none',
       },
       transitionTimingFunction: {
         'in-out-hard': 'cubic-bezier(.77, 0, .175, 1)',
