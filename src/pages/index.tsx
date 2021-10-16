@@ -1,82 +1,42 @@
-import * as React from 'react';
+import React from 'react';
 import tw from 'twin.macro';
-import { Link, graphql } from 'gatsby';
-
-import Layout from '../components/layout';
+import { graphql } from 'gatsby';
 import Seo from '../components/seo';
+import { Features, Newsletter } from '../modules/landing-page';
+import Layout from '../components/layout';
 
-const BlogIndex = ({ data, location }) => {
+const Landing = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`;
-  const posts = data.allMarkdownRemark.nodes;
-
   return (
     <Layout location={location} title={siteTitle}>
       <Seo title="FIG" />
-      {posts.length === 0 ? (
-        <p>
-          No blog posts found. Add markdown posts to &quot;content/blog&quot;
-          (or the directory you specified for the
-          &quot;gatsby-source-filesystem&quot; plugin in gatsby-config.js).
-        </p>
-      ) : (
-        <ol tw="mt-5 list-none">
-          {posts.map((post) => {
-            const title = post.frontmatter.title || post.fields.slug;
-
-            return (
-              <li key={post.fields.slug}>
-                <article
-                  tw="mx-8"
-                  itemScope
-                  itemType="http://schema.org/Article"
-                >
-                  <header tw="mb-4">
-                    <h2 tw="mt-8 text-2xl text-green-500 font-black mb-2">
-                      <Link to={post.fields.slug} itemProp="url">
-                        <span itemProp="headline">{title}</span>
-                      </Link>
-                    </h2>
-                    <small>{post.frontmatter.date}</small>
-                  </header>
-                  <section>
-                    <p
-                      dangerouslySetInnerHTML={{
-                        __html: post.frontmatter.description || post.excerpt,
-                      }}
-                      itemProp="description"
-                      tw="mb-0"
-                    />
-                  </section>
-                </article>
-              </li>
-            );
-          })}
-        </ol>
-      )}
+      {/* <div tw="text-green-500">
+          <h1 tw="text-6xl mb-4 font-black">SongBot</h1>
+          <h4 tw="text-lg mb-4 font-light">
+            Bringing order to the chaos that is your Spotify library.
+          </h4>
+          <h5 tw="text-xl">Yes, I&apos;m talking about you.</h5>
+          <button type="button">Click me</button>
+        </div> */}
+      <main className="flex-grow">
+        {/*  Page sections */}
+        {/* <HeroHome /> */}
+        <Features />
+        {/* <FeaturesBlocks /> */}
+        {/* <Testimonials /> */}
+        <Newsletter />
+      </main>
     </Layout>
   );
 };
 
-export default BlogIndex;
+export default Landing;
 
 export const pageQuery = graphql`
   query {
     site {
       siteMetadata {
         title
-      }
-    }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
-      nodes {
-        excerpt
-        fields {
-          slug
-        }
-        frontmatter {
-          date(formatString: "MMMM DD, YYYY")
-          title
-          description
-        }
       }
     }
   }

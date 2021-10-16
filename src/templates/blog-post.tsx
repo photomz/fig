@@ -4,6 +4,7 @@ import { Link, graphql } from 'gatsby';
 
 import Layout from '../components/layout';
 import Seo from '../components/seo';
+import '../styles/blog.module.css';
 
 const BlogPostTemplate = ({ data, location }) => {
   const post = data.markdownRemark;
@@ -16,7 +17,7 @@ const BlogPostTemplate = ({ data, location }) => {
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
       />
-      <article itemScope itemType="http://schema.org/Article">
+      <article itemScope itemType="http://schema.org/Article" tw="mt-16">
         <header>
           <h1 itemProp="headline" tw="-mt-4">
             {post.frontmatter.title}

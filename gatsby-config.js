@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Food Inspires Growth`,
+    title: `Food Inspires Growth.`,
     author: {
       name: `Markus Zhang`,
       summary: `who lives and studies in Singpore building useful things.`,
@@ -26,7 +26,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/images`,
+        path: `${__dirname}/src/assets/images`,
       },
     },
     {
@@ -120,7 +120,7 @@ module.exports = {
         background_color: `#c7e6cd`,
         theme_color: `#388d73`,
         display: `minimal-ui`,
-        icon: `src/images/fig.png`, // This path is relative to the root of the site.
+        icon: `src/assets/images/fig.png`, // This path is relative to the root of the site.
       },
     },
     `gatsby-plugin-react-helmet`,
